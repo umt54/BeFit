@@ -77,7 +77,7 @@ export default {
   name: 'App',
   data() {
     return {
-      currentSection: 'home', // Standardmäßig die Startseite anzeigen
+      currentSection: 'home', 
       age: null,
       gender: 'male',
       weight: null,
