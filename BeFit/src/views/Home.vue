@@ -2,6 +2,5 @@
   <HelloWorld />
 </template>
 
-<script setup>
-  import HelloWorld from '@/components/HelloWorld.vue'
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" charset="utf-8"></script>
+

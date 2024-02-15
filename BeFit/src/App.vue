@@ -118,6 +118,7 @@ export default {
 @import 'src/styles/ResponsivHeader.scss';
 </style>
 
+
 <style scoped>
 
 body {
