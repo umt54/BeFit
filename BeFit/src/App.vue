@@ -108,6 +108,16 @@ export default {
 }
 </script>
 
+<style lang="scss">
+// Importieren Sie Ihre SCSS-Datei hier
+@import 'src/styles/Kalorienbedarf.scss';
+</style>
+
+<style lang="scss">
+// Importieren Sie Ihre SCSS-Datei hier
+@import 'src/styles/ResponsivHeader.scss';
+</style>
+
 <style scoped>
 
 body {
@@ -116,33 +126,12 @@ body {
   padding: 0;
 }
 
-header {
-  background-color: #000000;
-  color: #fff;
-  padding: 10px;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin-right: 30px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
 main {
   padding: 20px;
 }
 
 footer {
-  background-color: #333;
+  background-color: hsl(55, 100%, 50%);
   color: #fff;
   text-align: center;
   padding: 10px;
@@ -151,40 +140,6 @@ footer {
   width: 100%;
 }
 
-/* Stile für den Kalorienbedarfzähler */
-#contact {
-  padding: 20px;
-}
 
-#contact label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-#contact input,
-#contact select {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-#contact button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#contact button:hover {
-  background-color: #0056b3;
-}
-
-#contact p {
-  margin-top: 10px;
-}
 </style>
 
