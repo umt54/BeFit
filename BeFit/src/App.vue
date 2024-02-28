@@ -10,10 +10,11 @@ import Sidebar from './components/Sidebar.vue'
 </script>
 
 <style lang="scss">
-:root {
-
+:root{
+  
 
 
 }
+
 
 </style>
