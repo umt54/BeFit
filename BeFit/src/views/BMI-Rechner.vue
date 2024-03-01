@@ -5,3 +5,8 @@
 
     </main>
 </template>
+
+<style lang="scss">
+// Importieren Sie Ihre SCSS-Datei hier
+@import 'src/styles/BMI-Rechner.scss';
+</style>
