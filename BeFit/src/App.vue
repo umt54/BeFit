@@ -1,8 +1,12 @@
 <template>
   <div>
     <header>
-      <h1 @click="navigateToHome" class="logo">BeFit</h1>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
+      <div class="navbar">
         <nav>
+      <h1 @click="navigateToHome" class="logo">BeFit</h1>
             <ul>
                 <li><router-link to="/">Startseite</router-link></li>
                 <li><router-link to="/bmi">BMI Zähler</router-link></li>
@@ -10,6 +14,7 @@
                 <li><router-link to="/calories">Kalorienbedarzähler</router-link></li>
             </ul>
         </nav>
+      </div>
     </header>
     <main>
       <router-view></router-view>
@@ -31,48 +36,6 @@ export default {
 </script>
 
 
-<style scoped>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin-right: 10px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-main {
-  padding: 20px;
-}
-
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-</style>
 
 
 
