@@ -7,22 +7,22 @@ body {
 nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 20px; 
-    background-color: #333; 
+    justify-content: space-between; 
 }
 
 nav h1 {
     margin: 0; 
     font-size: 2rem; 
+    margin-left: 2rem;
 }
 
 nav ul {
     display: flex;
     list-style: none; 
     margin: 0; 
-    padding: 0; 
-
+    padding: 0;
+    margin-right: 57rem;
+    margin-top: 7px;
 }
 
 nav li {
@@ -32,4 +32,26 @@ nav li {
 nav a {
     color: inherit; 
     text-decoration: none; 
+}
+
+.text1 {
+    margin-top: 15rem;
+    margin-left: 22rem;
+}
+
+h1{
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+    
+}
+
+h2{
+    margin: 0;
+    padding: 0;
+}
+
+.copyright {
+    padding-top: 7rem;
+    text-align: center;
 }

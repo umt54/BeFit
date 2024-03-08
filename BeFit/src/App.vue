@@ -8,7 +8,6 @@
         <nav>
       <h1 @click="navigateToHome" class="logo">BeFit</h1>
             <ul>
-                <li><router-link to="/">Startseite</router-link></li>
                 <li><router-link to="/bmi">BMI Zähler</router-link></li>
                 <li><router-link to="/workout">Workout Plan erstellen</router-link></li>
                 <li><router-link to="/calories">Kalorienbedarzähler</router-link></li>
