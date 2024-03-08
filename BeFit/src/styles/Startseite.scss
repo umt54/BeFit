@@ -37,13 +37,15 @@ nav a {
 .text1 {
     margin-top: 15rem;
     margin-left: 22rem;
+    position: fixed; 
+
 }
 
 h1{
     font-size: 4rem;
     margin: 0;
     padding: 0;
-    
+
 }
 
 h2{
@@ -51,7 +53,12 @@ h2{
     padding: 0;
 }
 
-.copyright {
-    padding-top: 7rem;
-    text-align: center;
+.Startbild{
+    display: flex
+    margin-left: 30rem;
+    margin-bottom: 50rem; 
+}
+
+img {
+    width: 30%;
 }
