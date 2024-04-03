@@ -1,0 +1,70 @@
+.bmi-rechner {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 10rem;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .input-group {
+    margin-bottom: 1rem;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: .5rem;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: .5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: .5rem;
+    background-color: #4caf50;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .ergebnis {
+    margin-top: 1rem;
+  }
+  
+  .bmi-balken-container {
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .bmi-balken {
+    height: 100%;
+    border-radius: 5px;
+  }
+
+  .bmi-rechner h2 {
+    color: black; 
+    text-align: center; 
+    margin: 1rem 0;
+  }
+
+  .bmi-rechner h3 {
+    color: black; 
+    text-align: center; 
+    margin: 1rem 0;
+  }

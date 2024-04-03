@@ -8,6 +8,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between; 
+    border-bottom: 1px solid
 }
 
 nav h1 {
@@ -55,8 +56,10 @@ h2{
 
 .Startbild{
     display: flex;
-    margin-left: 30rem;
-    margin-bottom: 50rem; 
+    margin-left: 50rem;
+    margin-top: 10rem;
+    position: relative;
+
 }
 
 img {
