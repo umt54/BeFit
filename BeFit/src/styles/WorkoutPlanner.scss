@@ -1,0 +1,70 @@
+// Importiere globale Variablen oder Mixins, falls benötigt
+
+.workout-planner {
+    max-width: 800px; // Definiere die maximale Breite des Workout-Planners
+    margin: 0 auto; // Zentriere den Workout-Planner horizontal
+  
+    h2 {
+      font-size: 24px; // Stil für die Überschrift "Workout Plan erstellen"
+      margin-bottom: 20px; // Füge unten etwas Abstand hinzu
+    }
+  
+    .exercise {
+      margin-bottom: 30px; // Füge zwischen den Übungen etwas Abstand hinzu
+  
+      h3 {
+        font-size: 20px; // Stil für den Namen der Übung
+        margin-bottom: 10px; // Füge unten etwas Abstand hinzu
+      }
+  
+      p {
+        font-size: 16px; // Stil für die Beschreibung der Übung
+        margin-bottom: 15px; // Füge unten etwas Abstand hinzu
+      }
+  
+      img {
+        max-width: 100%; // Stelle sicher, dass Bilder nicht breiter als der Container sind
+        height: auto; // Behalte das Seitenverhältnis der Bilder bei
+        display: block; // Vermeide unerwünschte Leerzeichen unter den Bildern
+        margin-bottom: 15px; // Füge unten etwas Abstand hinzu
+      }
+    }
+  
+    a {
+      color: #007bff; // Stil für den Link
+      text-decoration: none; // Entferne die Standardunterstreichung
+      &:hover {
+        text-decoration: underline; // Füge eine Unterstreichung hinzu, wenn der Link schwebt
+      }
+    }
+  
+    form {
+      label {
+        display: block; // Mache das Label zu einem Blockelement, um es untereinander zu platzieren
+        margin-bottom: 10px; // Füge unten etwas Abstand hinzu
+      }
+  
+      input[type="text"],
+      textarea,
+      button {
+        width: 100%; // Fülle die gesamte Breite des Containers aus
+        padding: 10px; // Füge Innenabstand hinzu
+        margin-bottom: 15px; // Füge unten etwas Abstand hinzu
+        border: 1px solid #ccc; // Füge einen Rahmen hinzu
+        border-radius: 5px; // Runde die Ecken ab
+        box-sizing: border-box; // Stelle sicher, dass der Padding in die Gesamtbreite einbezogen wird
+      }
+  
+      button {
+        background-color: #007bff; // Hintergrundfarbe des Buttons
+        color: #fff; // Textfarbe des Buttons
+        border: none; // Entferne den Rahmen des Buttons
+        cursor: pointer; // Ändere den Mauszeiger auf Zeiger, wenn über den Button gehalten
+        transition: background-color 0.3s; // Füge einen Übergangseffekt für den Hintergrund des Buttons hinzu
+        &:hover {
+          background-color: #0056b3; // Ändere die Hintergrundfarbe bei Hover
+        }
+      }
+    }
+  }
+  
