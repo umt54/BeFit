@@ -6,7 +6,7 @@
             <h2>Erstelle eigene Workout-Pläne</h2>
         </div>
         <div class="Startbild">
-            <img src="C:\Users\burak\OneDrive\Dokumente\3BWI\SWP\BeFit\BeFit\src\views\Startbild.png">
+            
         </div>
 
     </main>
