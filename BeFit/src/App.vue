@@ -17,6 +17,7 @@
     </header>
     <main>
       <router-view></router-view>
+      
     </main>
     <footer>
         <p>&copy; 2024 BeFit</p>
