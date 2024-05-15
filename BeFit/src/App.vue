@@ -17,7 +17,7 @@
             <div class="dropdown-content">
               <ul>
                 <li v-if="!isLoggedIn"><router-link to="/login">Anmelden</router-link></li>
-                <li :class="{ 'disabled': !isLoggedIn }">Abmelden</li>
+                <li v-else @click="handleLogout">Abmelden</li>
               </ul>
             </div>
           </div>
@@ -47,6 +47,13 @@ export default {
     handleLogout() {
       this.isLoggedIn = false;
       this.$router.push('/');
+    }
+  },
+  created() {
+    // Example to check if the user is logged in
+    const user = localStorage.getItem('user');
+    if (user) {
+      this.isLoggedIn = true;
     }
   }
 }
