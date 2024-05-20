@@ -8,16 +8,17 @@
         <nav>
           <h1 @click="navigateToHome" class="logo">BeFit</h1>
           <ul class="nav-links">
-            <li><router-link to="/bmi">BMI Zähler</router-link></li>
+            <li><router-link to="/BMI-Rechner">BMI Zähler</router-link></li>
             <li><router-link to="/workout">Workout Plan erstellen</router-link></li>
             <li><router-link to="/calories">Kalorienbedarzähler</router-link></li>
           </ul>
           <div class="menu-right">
-            <div class="hamburger">☰</div>
-            <div class="dropdown-content">
+            <div @click="toggleDropdown" class="hamburger">☰</div>
+            <div v-if="showDropdown" class="dropdown-content">
               <ul>
-                <li v-if="!isLoggedIn"><router-link to="/login">Anmelden</router-link></li>
-                <li v-else @click="handleLogout">Abmelden</li>
+                <li><router-link to="/login">Anmelden</router-link></li>
+                <li><router-link to="/register">Registrieren</router-link></li>
+                <button @click="handleLogout" v-if="isLoggedIn">Abmelden</button>
               </ul>
             </div>
           </div>
@@ -33,28 +34,40 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      isLoggedIn: false,
-    };
-  },
-  methods: {
-    navigateToHome() {
-      this.$router.push('/');
-    },
-    handleLogout() {
-      this.isLoggedIn = false;
-      this.$router.push('/');
-    }
-  },
-  created() {
-    // Example to check if the user is logged in
-    const user = localStorage.getItem('user');
+<script setup>
+import { onMounted, ref } from "vue"
+import { getAuth, onAuthStateChanged, signOut} from "firebase/auth"
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+const isLoggedIn = ref(false);
+
+let auth;
+onMounted(() => {
+  auth = getAuth();
+  onAuthStateChanged(auth, (user) => {
     if (user) {
-      this.isLoggedIn = true;
+      isLoggedIn.value = true;
+    } else {
+      isLoggedIn.value = false;
     }
-  }
-}
+  });
+});
+
+const handleLogout = () => {
+  signOut(auth).then(() => {
+    router.push("/");
+  });
+};
+
+const navigateToHome = () => {
+  // Implementiere deine Logik zum Navigieren zur Startseite hier
+};
+
+const toggleDropdown = () => {
+  showDropdown.value = !showDropdown.value;
+};
+
+const showDropdown = ref(false);
+
 </script>

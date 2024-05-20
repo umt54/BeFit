@@ -1,21 +1,20 @@
 <template>
-  <h1>Login</h1>
+  <h1>Create an Account</h1>
   <p><input type="text" placeholder="Email" v-model="email" /></p>
   <p><input type="password" placeholder="Password" v-model="password" /></p>
-  <p><button @click="login">Submit</button></p>
+  <p><button @click="register">Submit</button></p>
   <p><button @click="signInWithGoogle">Sign In with Google</button></p>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import  { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from 'vue-router';
-
 const email = ref("");
 const password = ref("");
 const router = useRouter();
 
-const login = () => {
+const register = () => {
   // Einfache Validierung
   if (!validateEmail(email.value)) {
     alert("Bitte geben Sie eine gültige E-Mail-Adresse ein.");
@@ -26,13 +25,13 @@ const login = () => {
     return;
   }
 
-  signInWithEmailAndPassword(getAuth(), email.value, password.value)
+  createUserWithEmailAndPassword(getAuth(), email.value, password.value)
     .then(() => {
-      console.log("Successfully logged in!");
+      console.log("Successfully registered!");
       router.push('/');
     })
     .catch((error) => {
-      console.error("Error logging in:", error);
+      console.error("Error registering:", error);
       alert(error.message);
     });
 };
