@@ -16,9 +16,9 @@
             <div @click="toggleDropdown" class="hamburger">☰</div>
             <div v-if="showDropdown" class="dropdown-content">
               <ul>
-                <li><router-link to="/login">Anmelden</router-link></li>
-                <li><router-link to="/register">Registrieren</router-link></li>
-                <button @click="handleLogout" v-if="isLoggedIn">Abmelden</button>
+                <li v-if="!isLoggedIn"><router-link to="/login" @click="toggleDropdown">Anmelden</router-link></li>
+                <li v-if="!isLoggedIn"><router-link to="/register" @click="toggleDropdown">Registrieren</router-link></li>
+                <li v-else @click="handleLogout">Abmelden</li>
               </ul>
             </div>
           </div>
@@ -36,13 +36,14 @@
 
 <script setup>
 import { onMounted, ref } from "vue"
-import { getAuth, onAuthStateChanged, signOut} from "firebase/auth"
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth"
 import { useRouter } from "vue-router";
 
 const router = useRouter();
 const isLoggedIn = ref(false);
-
+const showDropdown = ref(false);
 let auth;
+
 onMounted(() => {
   auth = getAuth();
   onAuthStateChanged(auth, (user) => {
@@ -56,18 +57,16 @@ onMounted(() => {
 
 const handleLogout = () => {
   signOut(auth).then(() => {
+    isLoggedIn.value = false;
     router.push("/");
   });
 };
 
 const navigateToHome = () => {
-  // Implementiere deine Logik zum Navigieren zur Startseite hier
+  router.push("/");
 };
 
 const toggleDropdown = () => {
   showDropdown.value = !showDropdown.value;
 };
-
-const showDropdown = ref(false);
-
 </script>
