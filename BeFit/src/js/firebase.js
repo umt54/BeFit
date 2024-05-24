@@ -1,8 +1,3 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from "./router"
-import store from './stores/store.js'; // Importiere den Store
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -18,14 +13,9 @@ const firebaseConfig = {
   storageBucket: "vue-fire-7c265.appspot.com",
   messagingSenderId: "355374809987",
   appId: "1:355374809987:web:939825a454cf944ff7ecb6",
-  measurementId: "G-Z5V6LZMH1Z"
+  measurementId: "G-Z5V6LZMH1Z",
 };
 
-initializeApp(firebaseConfig);
-
-const app = createApp(App)
-
-app.use(router)
-app.use(store); // Verwende den Store
-
-app.mount('#app')
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
