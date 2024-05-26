@@ -1,10 +1,23 @@
 <template>
-  <h1>Login</h1>
-  <p><input type="text" placeholder="Email" v-model="email" /></p>
-  <p><input type="password" placeholder="Password" v-model="password" /></p>
-  <p><button @click="login">Submit</button></p>
-  <p><button @click="signInWithGoogle">Sign In with Google</button></p>
+  <div class="login-container">
+    <h1>Login</h1>
+    <div class="input-group">
+      <label for="email">Email</label>
+      <input type="text" id="email" placeholder="Email" v-model="email" />
+    </div>
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Password" v-model="password" />
+    </div>
+    <button @click="login">Submit</button>
+    <button @click="signInWithGoogle">Sign In with Google</button>
+    <p class="create-account">
+      <a @click="goToRegister">Account erstellen</a>
+    </p>
+  </div>
 </template>
+
+
 
 <script setup>
 import { ref } from "vue";
@@ -41,6 +54,10 @@ const signInWithGoogle = () => {
   // Implementiere Google-Authentifizierung hier
 };
 
+const goToRegister = () => {
+  router.push('/register');
+};
+
 // Einfache Funktionen zur Validierung von E-Mail und Passwort
 const validateEmail = (email) => {
   // Einfache Überprüfung auf gültige E-Mail-Adresse
@@ -52,3 +69,9 @@ const validatePassword = (password) => {
   return password.length >= 6;
 };
 </script>
+
+
+
+<style lang="scss">
+@import 'src/styles/login.scss';
+</style>

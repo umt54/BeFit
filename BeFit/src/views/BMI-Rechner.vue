@@ -28,15 +28,15 @@
       gewicht: null,
       groesse: null,
       ergebnisText: '',
-      balkenBreite: 0, // Prozentuale Breite des Balkens
-      balkenFarbe: '#4CAF50', // Standardfarbe
+      balkenBreite: 0, 
+      balkenFarbe: '#4CAF50', 
     };
   },
   methods: {
     berechneBMI() {
       if (!this.gewicht || !this.groesse) {
         this.ergebnisText = 'Bitte Gewicht und Größe eingeben.';
-        this.balkenBreite = 0; // Zurücksetzen der Balkenbreite
+        this.balkenBreite = 0;
         return;
       }
 
@@ -58,22 +58,20 @@
       this.ergebnisText = `Dein BMI: ${bmi.toFixed(2)} (${bewertung})`;
     },
     setzeBalken(bmi) {
-      // Normiere den BMI-Wert auf eine Skala von 0 bis 100
-      // Angenommen, BMI-Werte reichen von 10 (min) bis 40 (max)
+
       const minBMI = 10;
       const maxBMI = 40;
       const normierterBMI = (bmi - minBMI) / (maxBMI - minBMI) * 100;
-      this.balkenBreite = Math.min(Math.max(normierterBMI, 0), 100); // Stellt sicher, dass der Wert zwischen 0 und 100 liegt
+      this.balkenBreite = Math.min(Math.max(normierterBMI, 0), 100); 
 
-      // Farbanpassung
       if (bmi < 18.5) {
-        this.balkenFarbe = '#2196F3'; // Blau für Untergewicht
+        this.balkenFarbe = '#2196F3'; 
       } else if (bmi < 25) {
-        this.balkenFarbe = '#4CAF50'; // Grün für Normalgewicht
+        this.balkenFarbe = '#4CAF50'; 
       } else if (bmi < 30) {
-        this.balkenFarbe = '#FFC107'; // Gelb für Übergewicht
+        this.balkenFarbe = '#FFC107'; 
       } else {
-        this.balkenFarbe = '#F44336'; // Rot für Adipositas
+        this.balkenFarbe = '#F44336'; 
       }
     }
   }

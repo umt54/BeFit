@@ -1,0 +1,67 @@
+.login-container {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 10rem;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .input-group {
+    margin-bottom: 1rem;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: .5rem;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: .5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: .5rem;
+    background-color: #4caf50;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .login-container h1 {
+    color: black;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  button + button {
+    margin-top: 1rem;
+  }
+  
+  .create-account {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .create-account a {
+    color: #4caf50;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .create-account a:hover {
+    text-decoration: underline;
+  }
+  

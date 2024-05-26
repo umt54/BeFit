@@ -1,9 +1,17 @@
 <template>
-  <h1>Create an Account</h1>
-  <p><input type="text" placeholder="Email" v-model="email" /></p>
-  <p><input type="password" placeholder="Password" v-model="password" /></p>
-  <p><button @click="register">Submit</button></p>
-  <p><button @click="signInWithGoogle">Sign In with Google</button></p>
+  <div class="register-container">
+    <h1>Register</h1>
+    <div class="input-group">
+      <label for="email">Email</label>
+      <input type="text" id="email" placeholder="Email" v-model="email" />
+    </div>
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Password" v-model="password" />
+    </div>
+    <button @click="register">Submit</button>
+    <button @click="signInWithGoogle">Sign In with Google</button>
+  </div>
 </template>
 
 <script setup>
@@ -51,3 +59,7 @@ const validatePassword = (password) => {
   return password.length >= 6;
 };
 </script>
+
+<style lang="scss">
+@import 'src/styles/register.scss';
+</style>

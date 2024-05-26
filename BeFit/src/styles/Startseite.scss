@@ -2,6 +2,9 @@ body {
   background-color: #292929;
   font-family: "Monomaniac One", sans-serif;
   color: white;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Verhindert horizontales Scrollen */
 }
 
 nav {
@@ -11,6 +14,8 @@ nav {
   background-color: #333;
   padding: 1rem 2rem;
   border-bottom: 1px solid #444;
+  width: 100%;
+  box-sizing: border-box; /* Box-Modell anpassen */
 }
 
 nav .logo {
@@ -80,6 +85,7 @@ img {
   color: white;
   padding: 0 2.5px;
   width: 100%;
+  box-sizing: border-box; /* Box-Modell anpassen */
 }
 
 .nav-links {
@@ -98,6 +104,7 @@ img {
 }
 
 .hamburger {
+  display: block;
   cursor: pointer;
   font-size: 24px;
   margin-right: 10px;
@@ -140,7 +147,7 @@ img {
   background-color: #f1f1f1;
 }
 
-.menu-right:hover .dropdown-content {
+.menu-right.show .dropdown-content {
   display: block;
 }
 
@@ -153,4 +160,75 @@ img {
 .disabled {
   color: #ccc;
   cursor: not-allowed;
+}
+
+/* Media Queries für verschiedene Bildschirmgrößen */
+@media (max-width: 768px) {
+  nav ul.nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+  
+  .Startbild {
+    display: none;
+  }
+
+  .text1 {
+    margin-top: 8rem;
+    margin-left: 2rem;
+    position: relative;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .menu-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .dropdown-content {
+    top: 100%;
+    right: 0;
+    width: 100%;
+  }
+
+  .menu-right.show .dropdown-content {
+    display: block;
+    position: relative;
+  }
+}
+
+@media (max-width: 480px) {
+  nav .logo {
+    font-size: 2rem;
+  }
+  
+  nav a {
+    font-size: 1rem;
+  }
+
+  .text1 {
+    margin-top: 5rem;
+    margin-left: 1rem;
+    position: relative;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
 }
