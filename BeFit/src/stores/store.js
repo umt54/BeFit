@@ -1,44 +1,56 @@
+// src/stores/store.js
 import { createStore } from "vuex";
+import { db, auth } from "../js/firebase";
+import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
 
-const store = createStore({
+export default createStore({
   state: {
     exercises: [],
   },
   mutations: {
-    ADD_EXERCISE(state, exercise) {
-      state.exercises.push(exercise);
-    },
-    SET_EXERCISES(state, exercises) {
+    setExercises(state, exercises) {
       state.exercises = exercises;
+    },
+    addExercise(state, exercise) {
+      state.exercises.push(exercise);
     },
   },
   actions: {
-    addExercise({ commit }, exercise) {
-      commit("ADD_EXERCISE", exercise);
+    async fetchExercises({ commit }) {
+      try {
+        const user = auth.currentUser;
+        if (user) {
+          const q = query(
+            collection(db, "exercises"),
+            where("userId", "==", user.uid)
+          );
+          const querySnapshot = await getDocs(q);
+          const exercises = querySnapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+          commit("setExercises", exercises);
+        }
+      } catch (error) {
+        console.error("Error fetching exercises: ", error);
+      }
     },
-    loadExercises({ commit }) {
-      const exercises = [
-        { name: "Push-up", description: "A basic push-up.", category: "Chest" },
-        { name: "Squat", description: "A basic squat.", category: "Legs" },
-        {
-          name: "Bicep Curl",
-          description: "A basic bicep curl.",
-          category: "Arms",
-        },
-        { name: "Pull-up", description: "A basic pull-up.", category: "Back" },
-        // Weitere Übungen hier hinzufügen
-      ];
-      commit("SET_EXERCISES", exercises);
+    async addExercise({ commit }, exercise) {
+      try {
+        const user = auth.currentUser;
+        if (user) {
+          const docRef = await addDoc(collection(db, "exercises"), {
+            ...exercise,
+            userId: user.uid,
+          });
+          commit("addExercise", { id: docRef.id, ...exercise });
+        }
+      } catch (error) {
+        console.error("Error adding exercise: ", error);
+      }
     },
   },
   getters: {
     exercises: (state) => state.exercises,
-    getExercisesByCategory: (state) => (category) => {
-      return state.exercises.filter(
-        (exercise) => exercise.category === category
-      );
-    },
   },
 });
-
-export default store;
