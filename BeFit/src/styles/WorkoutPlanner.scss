@@ -1,68 +1,93 @@
+/* Stile für den Workout Planner */
 .workout-planner {
-  margin: 0 auto; // Zentriere den Workout-Planner horizontal
+  display: flex;
+  justify-content: center;
+  /* Zentriere die Elemente horizontal */
+  gap: 50px;
+  /* Abstand zwischen den Elementen */
 
-  h2 {
-    font-size: 24px; // Stil für die Überschrift "Workout Plan erstellen"
-    margin-bottom: 20px; // Füge unten etwas Abstand hinzu
+  .left-panel,
+  .right-panel {
+    flex: 1;
+    /* Alle Panels sollen den verfügbaren Platz gleichmäßig aufteilen */
   }
 
+  /* Stile für den Filter */
+  .filters {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+    width: auto;
+    /* Automatische Breite */
+    max-width: 250px;
+    /* Maximale Breite */
+  }
+
+  /* Stile für die Übungen */
   .exercise {
-    margin-bottom: 30px; // Füge zwischen den Übungen etwas Abstand hinzu
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 16px;
+    max-width: 400px;
 
     h3 {
-      font-size: 20px; // Stil für den Namen der Übung
-      margin-bottom: 10px; // Füge unten etwas Abstand hinzu
+      font-size: 20px;
+      margin-bottom: 10px;
     }
 
     p {
-      font-size: 16px; // Stil für die Beschreibung der Übung
-      margin-bottom: 15px; // Füge unten etwas Abstand hinzu
+      font-size: 16px;
+      margin-bottom: 15px;
     }
 
     img {
-      max-width: 100%; // Stelle sicher, dass Bilder nicht breiter als der Container sind
-      height: auto; // Behalte das Seitenverhältnis der Bilder bei
-      display: block; // Vermeide unerwünschte Leerzeichen unter den Bildern
-      margin-bottom: 15px; // Füge unten etwas Abstand hinzu
-    }
-  }
-
-  a {
-    color: #007bff; // Stil für den Link
-    text-decoration: none; // Entferne die Standardunterstreichung
-
-    &:hover {
-      text-decoration: underline; // Füge eine Unterstreichung hinzu, wenn der Link schwebt
-    }
-  }
-
-  form {
-    label {
-      display: block; // Mache das Label zu einem Blockelement, um es untereinander zu platzieren
-      margin-bottom: 10px; // Füge unten etwas Abstand hinzu
-    }
-
-    input[type="text"],
-    textarea,
-    select,
-    button {
-      width: 100%; // Fülle die gesamte Breite des Containers aus
-      padding: 10px; // Füge Innenabstand hinzu
-      margin-bottom: 15px; // Füge unten etwas Abstand hinzu
-      border: 1px solid #ccc; // Füge einen Rahmen hinzu
-      border-radius: 5px; // Runde die Ecken ab
-      box-sizing: border-box; // Stelle sicher, dass der Padding in die Gesamtbreite einbezogen wird
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 15px;
     }
 
     button {
-      background-color: #007bff; // Hintergrundfarbe des Buttons
-      color: #fff; // Textfarbe des Buttons
-      border: none; // Entferne den Rahmen des Buttons
-      cursor: pointer; // Ändere den Mauszeiger auf Zeiger, wenn über den Button gehalten
-      transition: background-color 0.3s; // Füge einen Übergangseffekt für den Hintergrund des Buttons hinzu
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
 
       &:hover {
-        background-color: #0056b3; // Ändere die Hintergrundfarbe bei Hover
+        background-color: #0056b3;
+      }
+    }
+  }
+
+  /* Stile für das aktuelle Workout */
+  .current-workout {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: 18px;
+      margin-bottom: 10px;
+
+      button {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #c82333;
+        }
       }
     }
   }
